@@ -22,11 +22,11 @@ Sebelum melakukan pemodelan dan visualisasi, langkah pembersihan data dilakukan 
 
 ## 3. Insights dan Visualisasi
 
-### A. Identifikasi Produk "Underperformer" (Tugas 1)
+### A. Identifikasi Produk "Underperformer" 
 Berdasarkan hasil analisis menggunakan *Scatter Plot* (sumbu X: `Price_Per_Unit` dan sumbu Y: `Quantity`), ditemukan kelompok produk yang berada di area pojok kanan bawah. Produk-produk ini memiliki harga per unit di atas rata-rata industri namun mencatat kuantitas penjualan terkecil. Hal ini mengonfirmasi hipotesis bahwa harga yang terlalu tinggi menjadi penghambat utama volume penjualan produk tersebut.
 ![Scatter Plot Underperformer](tugas1_underperformer.png)
 
-### B. Segmentasi Pelanggan / RFM Analysis (Tugas 2 & 5)
+### B. Segmentasi Pelanggan / RFM Analysis 
 Melalui pengelompokan menggunakan metode kuantil (`pd.qcut`), pelanggan berhasil disegmentasikan berdasarkan skor 1-5. 
 * **Pelanggan Terbaik (Skor 555):** Adalah kelompok pelanggan yang baru saja bertransaksi, sangat sering berbelanja, dan menghasilkan total penjualan terbesar. Kelompok ini menjadi prioritas utama penerima voucher loyalitas eksklusif.
 * **Pelanggan Berisiko (Skor R Rendah):** Pelanggan yang dahulu aktif namun sudah lama tidak kembali, membutuhkan strategi *re-engaging*.
@@ -35,13 +35,13 @@ Melalui pengelompokan menggunakan metode kuantil (`pd.qcut`), pelanggan berhasil
 Melalui visualisasi *Bar Chart* Horizontal yang membandingkan nilai total pendapatan terhadap total `Ad_Budget` per kategori, didapatkan urutan efisiensi dari yang paling rendah ke tinggi. Kategori yang berada di posisi paling atas menunjukkan pemborosan biaya pemasaran (biaya iklan membengkak namun tidak sebanding dengan pendapatan yang masuk).
 ![Bar Chart Efisiensi Kategori](tugas3_efisiensi_kategori.png)
 
-### D. Uji Hipotesis & Regresi Linear Sederhana (Tugas 4 & 6)
+### D. Uji Hipotesis & Regresi Linear Sederhana 
 * **Hasil Uji Hipotesis:** Rata-rata nilai `Total_Sales` pada kelompok data dengan `Ad_Budget` di atas median terbukti lebih tinggi secara signifikan dibandingkan kelompok iklan rendah.
 * **Hasil Regresi Linear:** Model prediktif menghasilkan nilai Koefisien Iklan ($\beta_1$) bernilai positif, menandakan setiap kenaikan unit biaya iklan akan memprediksi peningkatan penjualan. Evaluasi model menghasilkan tingkat akurasi akurat yang ditunjukkan oleh nilai $R^2$ Score.
 
 ---
 
-## 4. Recommendation
+## 4. Recommendasi
 
 1. **Strategi Penanganan Produk Underperformer:** Untuk mencairkan arus kas yang tertahan pada produk berharga tinggi yang jarang laku, perusahaan disarankan menerapkan strategi *bundling* (menggabungkan produk mahal dengan produk populer berharga murah) atau memberikan potongan harga bersyarat (*volume discount*).
 2. **Pemberian Voucher Loyalitas Tepat Sasaran:** Voucher loyalitas sebaiknya dialokasikan secara ketat hanya untuk segmen pelanggan dengan skor frekuensi dan moneter tinggi (Skor F & M: 4 atau 5) guna memaksimalkan ROI pogram retensi.
